@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kaushan+Script&family=Montserrat:wght@350;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
   --font-script: 'Caveat', cursive;
+  --font-kaushan: 'Kaushan Script', cursive;
+  --font-guthen: 'Guthen Bloots Personal Use', 'Caveat', 'Kaushan Script', cursive;
+  --font-gotham: 'Gotham', 'Montserrat', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --color-brand-purple-dark: #2d0f4f;
   --color-brand-purple: #5b2a8c;
@@ -26,3 +29,16 @@
 .font-script {
   font-family: var(--font-script);
 }
+
+.font-guthen {
+  font-family: 'Guthen Bloots Personal Use', 'Caveat', 'Kaushan Script', cursive;
+}
+
+.font-kaushan {
+  font-family: 'Kaushan Script', cursive;
+}
+
+.font-gotham {
+  font-family: 'Gotham', 'Montserrat', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+

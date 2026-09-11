@@ -14,114 +14,242 @@ const badges = [
 
 export function NewLaunch() {
   return (
-    <section className="relative bg-[#f0f8fb] pt-12 pb-20 md:pt-16 md:pb-28">
-      {/* Palm Tree Leaf pinned to top-right corner behind the blue wave */}
-      <img
-        src={leaf}
-        alt=""
-        className="pointer-events-none absolute right-0 top-0 z-10 w-[280px] sm:w-[360px] md:w-[460px] lg:w-[540px] max-h-[320px] sm:max-h-[400px] md:max-h-[480px] h-auto object-top object-right"
-      />
-
-      {/* Cyan Wave Banner transitioning cleanly between Hero and NewLaunch */}
-      <div className="pointer-events-none absolute left-0 top-0 -translate-y-1/2 z-20 w-full leading-[0]">
-        <img src={blueWave} alt="" className="w-full h-auto block min-h-[50px]" />
+    <section
+      id="new-launch"
+      className="relative z-30 w-full bg-[#f3dff] -mt-[45px] sm:-mt-[60px] md:-mt-[80px] lg:-mt-[95px] pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-8 sm:pb-12 md:pb-14 overflow-visible"
+      style={{
+        maxWidth: "1920px",
+        margin: "0 auto",
+      }}
+    >
+      {/* 1. Palm Leaf in Top Right Corner */}
+      <div
+        className="pointer-events-none absolute top-0 right-0 z-10 select-none overflow-hidden"
+        aria-hidden="true"
+      >
+        <img
+          src={leaf}
+          alt=""
+          className="w-[220px] sm:w-[300px] md:w-[400px] lg:w-[480px] xl:w-[560px] max-w-[560px] h-auto object-contain object-top object-right opacity-100"
+        />
       </div>
 
-      {/* Main Section Content */}
-      <div className="relative mx-auto max-w-[1340px] px-6 sm:px-10 lg:px-16 pt-4 md:pt-8">
-        <div className="relative grid items-center gap-10 md:grid-cols-[1.05fr_1.15fr] lg:gap-14">
+      {/* 2. Top Cyan Wave Transition Banner - Overlapping Hero Video Layer */}
+      <div className="pointer-events-none absolute left-0 top-0 -translate-y-1/2 z-40 w-full leading-[0]">
+        <img
+          src={blueWave}
+          alt=""
+          className="w-full h-auto block min-h-[48px] sm:min-h-[64px] md:min-h-[80px] lg:min-h-[96px]"
+        />
+      </div>
+
+      {/* 3. Background Swooping Thread Graphic */}
+      <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center overflow-hidden opacity-40 select-none">
+        <img
+          src={thread}
+          alt=""
+          className="w-full min-w-[1100px] max-w-[1920px] h-auto object-cover"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* 4. Main Content Container */}
+      <div className="relative mx-auto w-full max-w-[1920px] px-6 sm:px-10 md:px-16 lg:px-16 xl:px-[120px] z-20">
+        <div className="grid grid-cols-1 items-center gap-8 md:gap-10 lg:grid-cols-[1.1fr_0.9fr] xl:grid-cols-[692px_1fr] lg:gap-8 xl:gap-12">
           
-          {/* Left Column: Text & CTAs */}
-          <div className="relative z-10 max-w-[560px]">
-            {/* Title with brush stroke */}
-            <div className="inline-block mb-4">
-              <p className="font-script not-italic text-[36px] sm:text-[42px] md:text-[48px] lg:text-[52px] leading-none text-[#1a1a2e]">
+          {/* Left Column: Title, Logo, Paragraph, Badges, CTAs */}
+          <div className="flex flex-col items-start justify-center text-left z-30 max-w-[692px]">
+            
+            {/* New Launch Title + Hand-drawn squiggly underline */}
+            <div className="mb-3 sm:mb-4 flex flex-col items-start">
+              <h2
+                className="font-guthen capitalize text-[#1a1a2e]"
+                style={{
+                  fontFamily: "'Guthen Bloots Personal Use', 'Caveat', 'Kaushan Script', cursive",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "24px",
+                  lineHeight: "100%",
+                  letterSpacing: "0.1em",
+                  textTransform: "capitalize",
+                }}
+              >
                 New Launch
-              </p>
-              {/* Hand-drawn underline graphic matching reference image */}
+              </h2>
+              {/* Hand-drawn squiggly underline matching reference */}
               <svg
-                className="w-28 h-2.5 text-[#1a1a2e] opacity-80 mt-1.5"
+                className="w-24 sm:w-28 h-2 text-[#1a1a2e] opacity-80 mt-1"
                 viewBox="0 0 100 8"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
-                  d="M2 5C25 2 75 6 98 3"
+                  d="M2 4.5 C 14 1.5, 26 7.5, 38 4.5 C 50 1.5, 62 7.5, 74 4.5 C 86 1.5, 94 6, 98 4"
                   stroke="currentColor"
-                  strokeWidth="3.5"
+                  strokeWidth="2.2"
                   strokeLinecap="round"
                 />
               </svg>
             </div>
 
-            {/* Logo */}
-            <div className="mb-6 flex items-center">
+            {/* Logo in New Launch */}
+            <div className="mb-5 sm:mb-6 flex items-center">
               <img
                 src={logo}
-                alt="Hydra Curls logo"
-                className="h-[56px] sm:h-[64px] md:h-[74px] w-auto shrink-0"
+                alt="Hydra Curls"
+                className="w-auto h-auto object-contain"
+                style={{
+                  width: "168px",
+                  height: "81px",
+                  maxWidth: "168px",
+                  maxHeight: "81px",
+                }}
               />
             </div>
 
-            {/* Description */}
-            <p className="max-w-[500px] font-sans italic text-[16px] sm:text-[18px] md:text-[19px] font-normal leading-[1.8] text-[#334155] mb-7">
-              Revolutionary hair care range specially designed for Arab curly, coily &amp;
-              wavy hair. Experience{" "}
-              <span className="font-bold text-[#00cbf8] not-italic">
-                48-hour hydration
-              </span>{" "}
-              with natural ingredients like Hyaluronic Acid, Coconut &amp; Avocado.
-            </p>
+            {/* Paragraph in New Launch */}
+            <div className="mb-5 sm:mb-6 w-full max-w-[692px]">
+              <p
+                className="font-kaushan text-[#334155] text-[19px] sm:text-[21px] md:text-[23px] lg:text-[24px] leading-[135%] sm:leading-[130%]"
+                style={{
+                  fontFamily: "'Kaushan Script', cursive",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  letterSpacing: "0%",
+                }}
+              >
+                Revolutionary hair care range specially designed for Arab curly, coily &amp;
+                wavy hair. Experience{" "}
+                <span
+                  className="font-kaushan text-[#00cbf8] font-bold"
+                  style={{
+                    fontFamily: "'Kaushan Script', cursive",
+                    fontWeight: 400,
+                    letterSpacing: "0%",
+                  }}
+                >
+                  48-hour hydration
+                </span>{" "}
+                with natural ingredients like Hyaluronic Acid, Coconut &amp; Avocado.
+              </p>
+            </div>
 
-            {/* Badges */}
-            <ul className="flex flex-wrap gap-3 mb-8">
+            {/* Badges / CTC Type Cards Row */}
+            <ul className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-6 sm:mb-7">
               {badges.map(({ icon: Icon, label }) => (
                 <li
                   key={label}
-                  className="flex items-center gap-2.5 rounded-lg border border-[#00cbf8]/25 bg-[#e6f7fc] px-4 py-2.5 font-sans not-italic text-[13.5px] sm:text-[14.5px] font-medium text-[#334155] shadow-xs"
+                  className="flex items-center gap-2 rounded-[10px] border border-[#00cbf8]/40 bg-[#e6f7fc]/95 px-3 sm:px-3.5 py-2 shadow-xs transition-all hover:bg-[#dcf3fa]"
+                  style={{
+                    minHeight: "40px",
+                    borderRadius: "10px",
+                  }}
                 >
-                  <Icon size={18} className="shrink-0 text-[#00cbf8]" />
-                  <span>{label}</span>
+                  <Icon size={16} className="shrink-0 text-[#00cbf8]" />
+                  <span
+                    className="font-gotham text-[#334155] text-[13px] sm:text-[14px] md:text-[15px] font-normal leading-tight whitespace-nowrap"
+                    style={{
+                      fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+                    }}
+                  >
+                    {label}
+                  </span>
                 </li>
               ))}
             </ul>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 items-center">
-              <button className="inline-flex items-center gap-2.5 rounded-lg bg-[#00cbf8] hover:bg-[#00b8e0] px-7 py-3.5 font-sans not-italic text-[15.5px] sm:text-[16px] font-semibold text-white shadow-[0_4px_16px_rgba(0,203,248,0.35)] transition-all cursor-pointer active:scale-98">
-                Explore Products <ArrowRight size={19} />
+            {/* CTA Buttons Row */}
+            <div className="flex flex-wrap gap-3.5 sm:gap-4 items-center">
+              {/* Button 1: Explore Products */}
+              <button
+                type="button"
+                className="group inline-flex items-center justify-center rounded-[10px] bg-[#00cbf8] text-white shadow-[0_4px_16px_rgba(0,203,248,0.38)] transition-all duration-300 hover:bg-[#00b8e0] hover:shadow-[0_6px_22px_rgba(0,203,248,0.48)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                style={{
+                  width: "240px",
+                  height: "58px",
+                  borderRadius: "10px",
+                  padding: "10px 16px",
+                  gap: "10px",
+                }}
+              >
+                <span
+                  className="font-gotham flex items-center justify-center gap-2 text-center text-[18px] sm:text-[20px] font-normal"
+                  style={{
+                    fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+                    fontWeight: 400,
+                    lineHeight: "100%",
+                  }}
+                >
+                  Explore Products
+                  <ArrowRight className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
               </button>
-              <button className="inline-flex items-center gap-2.5 rounded-lg border-2 border-[#00cbf8] bg-transparent hover:bg-[#00cbf8]/10 px-6.5 py-3.5 font-sans not-italic text-[15.5px] sm:text-[16px] font-semibold text-[#00cbf8] transition-all cursor-pointer">
-                Learn Curly Girl Method
+
+              {/* Button 2: Learn Curly Girl Method */}
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-[10px] border-2 border-[#00cbf8] bg-transparent hover:bg-[#00cbf8]/10 px-6 text-[#00cbf8] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                style={{
+                  height: "58px",
+                  borderRadius: "10px",
+                  padding: "10px 16px",
+                }}
+              >
+                <span
+                  className="font-gotham text-center text-[16px] sm:text-[18px] font-normal"
+                  style={{
+                    fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+                    fontWeight: 400,
+                    lineHeight: "100%",
+                  }}
+                >
+                  Learn Curly Girl Method
+                </span>
               </button>
             </div>
+
           </div>
 
-          {/* Right Column: Visual Composition */}
-          <div className="relative flex min-h-[380px] sm:min-h-[440px] md:min-h-[500px] items-center justify-center">
-            {/* Thread SVG background graphic */}
-            <img
-              src={thread}
-              alt=""
-              className="pointer-events-none absolute -left-[35%] top-1/2 -translate-y-1/2 w-[160%] max-w-none opacity-30 z-0"
-            />
+          {/* Right Column: Visual Composition (Watersplash + Product Bottle) */}
+          <div className="relative flex items-center justify-center min-h-[300px] sm:min-h-[380px] md:min-h-[460px] lg:min-h-[520px] xl:min-h-[560px]">
+            
+            {/* Watersplash Image - reduced size */}
+            <div
+              className="pointer-events-none absolute inset-0 flex items-center justify-center z-10 select-none"
+              aria-hidden="true"
+            >
+              <img
+                src={splash}
+                alt=""
+                className="w-[240px] sm:w-[320px] md:w-[400px] lg:w-[460px] xl:w-[520px] max-w-[520px] h-auto object-contain opacity-100"
+                style={{
+                  maxWidth: "520px",
+                  maxHeight: "520px",
+                }}
+              />
+            </div>
 
-            {/* Water Splash isolated around bottle */}
-            <img
-              src={splash}
-              alt=""
-              className="pointer-events-none absolute left-[0%] sm:left-[4%] md:left-[8%] top-[10%] w-[320px] sm:w-[400px] md:w-[480px] max-w-none opacity-90 z-0"
-            />
+            {/* Product Bottle Image - reduced size & rotated -19.5deg */}
+            <div className="relative z-20 flex items-center justify-center select-none">
+              <img
+                src={bottle}
+                alt="Parachute Advansed Hydra Curls Shampoo Bottle"
+                className="w-auto h-[260px] sm:h-[340px] md:h-[410px] lg:h-[470px] xl:h-[530px] max-h-[530px] object-contain drop-shadow-[0_20px_32px_rgba(30,10,50,0.32)] transition-transform duration-500 hover:scale-105"
+                style={{
+                  maxWidth: "240px",
+                  transform: "rotate(-19.5deg)",
+                  transformOrigin: "center center",
+                }}
+              />
+            </div>
 
-            {/* Shampoo Bottle tilted clockwise ~13 degrees */}
-            <img
-              src={bottle}
-              alt="Hydra Curls shampoo bottle"
-              className="relative z-10 h-[320px] sm:h-[380px] md:h-[440px] w-auto rotate-[13deg] drop-shadow-[0_24px_32px_rgba(45,15,79,0.28)] transition-transform duration-300 hover:rotate-[10deg]"
-            />
           </div>
+
         </div>
       </div>
     </section>
   );
 }
+
+export default NewLaunch;

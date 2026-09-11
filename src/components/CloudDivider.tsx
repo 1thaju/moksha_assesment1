@@ -8,17 +8,19 @@ interface CloudDividerProps {
 export function CloudDivider({ color = "#ffffff", flip = false, className = "" }: CloudDividerProps) {
   return (
     <div
-      className={`absolute left-0 w-full overflow-hidden leading-[0] ${flip ? "top-0 -translate-y-[1px] rotate-180" : "bottom-0 translate-y-[1px]"} ${className}`}
+      className={`pointer-events-none absolute left-0 w-full overflow-hidden leading-[0] ${
+        flip ? "top-0 -translate-y-[1px] rotate-180" : "bottom-0 translate-y-[1px]"
+      } ${className}`}
       aria-hidden="true"
     >
       <svg
-        viewBox="0 0 1920 120"
-        className="w-full h-[40px] sm:h-[60px] md:h-[90px]"
+        viewBox="0 0 1920 140"
+        className="w-full h-[48px] sm:h-[64px] md:h-[92px]"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M0,80 Q 120,20 240,70 T 480,70 T 720,70 T 960,70 T 1200,70 T 1440,70 T 1680,70 T 1920,70 L1920,120 L0,120 Z"
+          d="M0,70 C180,20 300,120 470,70 C670,10 780,100 960,70 C1180,35 1330,110 1520,70 C1690,35 1810,95 1920,70 L1920,140 L0,140 Z"
           fill={color}
         />
       </svg>

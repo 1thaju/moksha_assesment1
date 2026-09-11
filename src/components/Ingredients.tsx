@@ -40,88 +40,139 @@ const ingredients = [
 
 export function Ingredients() {
   return (
-    <section className="relative bg-[#f4f9fa] pt-16 pb-28 md:pb-36 overflow-hidden z-10">
+    <section className="relative bg-[#f4f9fa] pt-12 md:pt-16 pb-16 md:pb-24 min-h-screen flex flex-col justify-center overflow-hidden z-10">
       
-      {/* Decorative Rotating Text on Left */}
-      <div className="absolute left-[-150px] top-[20%] w-[350px] h-[350px] pointer-events-none opacity-20 select-none">
-        <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_20s_linear_infinite]">
-          <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="transparent" />
-          <text fontSize="8" fontWeight="bold" fill="#a0b0b5" letterSpacing="3">
-            <textPath href="#circlePath">
-              Hydra Curls Hydra Curls Hydra Curls
-            </textPath>
-          </text>
-        </svg>
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8">
+      <div className="relative z-10 mx-auto max-w-[1680px] px-6 sm:px-10 md:px-16 lg:px-[120px] w-full">
         
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="relative inline-block mb-3">
-            <p className="font-script text-xl text-black">Premium Ingredients</p>
-            <svg className="absolute w-full h-2 -bottom-1 left-0 text-gray-400" viewBox="0 0 100 10" preserveAspectRatio="none">
-              <path d="M0,5 Q10,10 20,5 T40,5 T60,5 T80,5 T100,5" stroke="currentColor" fill="none" strokeWidth="0.5" />
+        <div className="flex flex-col items-center text-center mb-14 sm:mb-16">
+          {/* Top Tag: Premium Ingredients */}
+          <div className="relative inline-block mb-3.5">
+            <p
+              className="font-guthen text-[20px] sm:text-[24px] text-black capitalize leading-none"
+              style={{
+                fontFamily: "'Guthen Bloots Personal Use', 'Caveat', cursive",
+                letterSpacing: "0.1em",
+                fontWeight: 400,
+              }}
+            >
+              Premium Ingredients
+            </p>
+            {/* Squiggly underline */}
+            <svg className="absolute w-full h-2 -bottom-1.5 left-0 text-gray-400" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M0,5 Q10,10 20,5 T40,5 T60,5 T80,5 T100,5" stroke="currentColor" fill="none" strokeWidth="0.6" />
             </svg>
           </div>
           
-          <h2 className="text-3xl md:text-[42px] font-extrabold mt-2 text-black tracking-tight">
+          {/* Main Title: Powered by Nature's Best Ingredients */}
+          <h2
+            className="font-gotham font-bold text-[32px] sm:text-[44px] md:text-[54px] text-black leading-[1.05] sm:leading-[1.1] text-center tracking-normal max-w-[568px]"
+            style={{
+              fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+              fontWeight: 700,
+            }}
+          >
             Powered by <span className="text-[#00cbf8]">Nature's</span><br />
             Best Ingredients
           </h2>
           
-          <p className="mt-5 text-[15px] text-gray-500 max-w-xl mx-auto font-script italic">
-            Our formulations combine scientifically-proven active ingredients with<br/>
-            natural extracts for superior curly hair care.
+          {/* Subtitle: Kaushan Script 24px */}
+          <p
+            className="mt-6 text-[17px] sm:text-[20px] md:text-[24px] text-[#556877] max-w-[722px] mx-auto leading-[1.3] sm:leading-[1.4] text-center font-normal"
+            style={{
+              fontFamily: "'Kaushan Script', cursive",
+              letterSpacing: "0%",
+              fontWeight: 400,
+            }}
+          >
+            Our formulations combine scientifically-proven active ingredients with natural extracts for superior curly hair care.
           </p>
         </div>
 
-        {/* Ingredient Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12 relative z-20">
-          {ingredients.map((item, i) => (
-            <div 
-              key={i} 
-              className={`relative rounded-[20px] p-8 overflow-hidden shadow-sm transition-transform hover:-translate-y-1 ${item.bgClass}`}
-            >
-              {/* Background Video */}
-              {item.bgVideo && (
-                <video 
-                  src={item.bgVideo} 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  className={`absolute inset-0 w-full h-full object-cover pointer-events-none z-0 ${i === 0 ? 'opacity-30 mix-blend-multiply scale-110 object-right-bottom' : 'opacity-40 mix-blend-overlay'}`} 
-                />
-              )}
-              
-              {/* Card Content */}
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="mb-5">
-                  {item.icon}
+        {/* Ingredient Cards (3 equal cards across width with 544px x 449px ratio) */}
+        <div className="relative z-20 w-full mb-12">
+          
+          {/* Orbiting Rotating Text attached to first card's top-left corner (238.5px x 238.5px) */}
+          <div className="absolute -left-6 sm:-left-10 lg:-left-[63px] -top-10 sm:-top-14 lg:-top-[83px] w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] lg:w-[238.5px] lg:h-[238.5px] pointer-events-none opacity-40 select-none z-30">
+            <svg viewBox="0 0 200 200" className="w-full h-full animate-[spin_20s_linear_infinite]">
+              <path id="ingredientCirclePath" d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0" fill="transparent" />
+              <text fontSize="14" fontWeight="600" fill="#7E8F9F" letterSpacing="4" className="font-sans">
+                <textPath href="#ingredientCirclePath">
+                  Hydra Curls Hydra Curls Hydra Curls
+                </textPath>
+              </text>
+            </svg>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full justify-items-center">
+            {ingredients.map((item, i) => (
+              <div 
+                key={i} 
+                className={`relative w-full max-w-[544px] min-h-[400px] lg:min-h-[449px] rounded-[20px] p-6 sm:p-8 lg:p-9 overflow-hidden shadow-sm border border-black/5 transition-transform hover:-translate-y-1 flex flex-col justify-between ${item.bgClass}`}
+              >
+                {/* Background Video */}
+                {item.bgVideo && (
+                  <video 
+                    src={item.bgVideo} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    className={`absolute inset-0 w-full h-full object-cover pointer-events-none z-0 ${i === 0 ? 'opacity-30 mix-blend-multiply scale-110 object-right-bottom' : 'opacity-40 mix-blend-overlay'}`} 
+                  />
+                )}
+                
+                {/* Card Content */}
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    {/* Card Icon (91px x 91px) */}
+                    <div className="w-[64px] h-[64px] sm:w-[76px] sm:h-[76px] lg:w-[91px] lg:h-[91px] rounded-[18px] sm:rounded-[20px] bg-white/80 backdrop-blur-sm shadow-sm flex items-center justify-center p-3 lg:p-4 mb-5 lg:mb-6 border border-black/5">
+                      {item.icon}
+                    </div>
+                    
+                    {/* Card Header (Gotham Bold 24px, line-height 100%) */}
+                    <h3 
+                      className="font-gotham font-bold text-[18px] sm:text-[21px] lg:text-[24px] text-black leading-none mb-3"
+                      style={{
+                        fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+                        fontWeight: 700,
+                        letterSpacing: "0%",
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    
+                    {/* Card Description (Gotham 350, 20px, line-height 32px, max-w 496px) */}
+                    <p 
+                      className="font-gotham text-[14px] sm:text-[17px] lg:text-[20px] text-gray-800 leading-[1.5] sm:leading-[1.6] lg:leading-[32px] max-w-[496px] mb-6"
+                      style={{
+                        fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+                        fontWeight: 350,
+                        letterSpacing: "0%",
+                      }}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <p className="text-[10px] font-bold tracking-wider text-gray-500/80 mb-3 uppercase">
+                      PREMIUM INGREDIENTS
+                    </p>
+                    
+                    <ul className="space-y-2">
+                      {item.points.map((p, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-[13px] sm:text-[14px] text-gray-700 font-medium">
+                          <CheckCircle2 size={16} className="text-[#00cbf8]" strokeWidth={2.5} /> 
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                
-                <h3 className="text-[17px] font-extrabold text-black mb-2">{item.title}</h3>
-                
-                <p className="text-[13px] text-gray-600 font-medium leading-relaxed mb-6">
-                  {item.desc}
-                </p>
-                
-                <p className="text-[9px] font-bold tracking-wider text-gray-400/80 mb-3 uppercase">
-                  PREMIUM INGREDIENTS
-                </p>
-                
-                <ul className="space-y-2 mt-auto">
-                  {item.points.map((p, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-[13px] text-gray-600 font-medium">
-                      <CheckCircle2 size={16} className="text-[#00cbf8]" strokeWidth={2.5} /> 
-                      {p}
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Badges Container */}

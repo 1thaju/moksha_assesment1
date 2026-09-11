@@ -1,3 +1,4 @@
+import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { NewLaunch } from "./components/NewLaunch";
 import { ProductBanner } from "./components/ProductBanner";
@@ -5,14 +6,15 @@ import { InfoSplit } from "./components/InfoSplit";
 import { ProductCarousel } from "./components/ProductCarousel";
 import { PromiseSection } from "./components/PromiseSection";
 import { Ingredients } from "./components/Ingredients";
-import { Community } from "./components/Community";
-import { HairTypes } from "./components/HairTypes";
+import { CommunitySection } from "./components/CommunitySection";
+import { HairTypesSection } from "./components/HairTypesSection";
 import { CurlyJourney } from "./components/CurlyJourney";
 import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-clip">
+      <Header />
       <Hero />
       <NewLaunch />
       <ProductBanner />
@@ -20,8 +22,8 @@ function App() {
       <ProductCarousel />
       <PromiseSection />
       <Ingredients />
-      <Community />
-      <HairTypes />
+      <CommunitySection />
+      <HairTypesSection />
       <CurlyJourney />
       <Footer />
     </div>
