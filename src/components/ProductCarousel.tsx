@@ -9,6 +9,7 @@ import productBg from "../assets/product bg.svg";
 import productNextBg from "../assets/product next bg.svg";
 import cloud from "../assets/cloud.svg";
 import blueWave from "../assets/bluewave.svg";
+import irregularLines from "../assets/irregular_lines.svg";
 
 const products = [
   {
@@ -62,6 +63,13 @@ export function ProductCarousel() {
   return (
     <section className="relative w-full bg-[#f4fbfd] overflow-x-hidden overflow-y-visible flex flex-col pt-4 sm:pt-10 md:pt-16 pb-10 sm:pb-16 md:pb-24">
       
+      {/* Background Irregular Lines Overlay */}
+      <img
+        src={irregularLines}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0"
+      />
+
       {/* Top Background area for Clouds */}
       <div className="relative w-full h-[60px] sm:h-[120px] md:h-[180px] z-10">
         <img

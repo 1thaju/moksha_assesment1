@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import modelWavy from "../assets/model_wavy.jpg";
-import modelCurly from "../assets/model_curly.jpg";
-import modelCoily from "../assets/model_coily.jpg";
+import curlyimage1 from "../assets/curlyimage1.svg";
+import curlyimage2 from "../assets/curlyimage2.svg";
+import curlyimage3 from "../assets/curlyimage3.svg";
 
 function WaveSquiggle({ className = "" }: { className?: string }) {
   return (
@@ -93,55 +93,102 @@ interface JourneyRowProps {
 function JourneyRow({ image, imageColor, cardColor, cardSide }: JourneyRowProps) {
   const imageBlock = (
     <div
-      className="relative h-full min-h-[360px] overflow-hidden md:min-h-[580px] lg:h-[632px]"
+      className="relative h-full min-h-[360px] md:min-h-[580px] lg:h-[632px] w-full overflow-hidden"
       style={{ backgroundColor: imageColor }}
     >
-      <img src={image} alt="Curly hair styling model" className="absolute inset-0 h-full w-full object-cover object-center" />
+      <img
+        src={image}
+        alt="Curly hair styling guide"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
       <MobileCurlyEdge color={cardColor} flip={cardSide === "left"} />
     </div>
   );
 
   const cardBlock = (
     <div
-      className="relative flex h-full min-h-[360px] items-center justify-center px-8 py-12 text-white sm:px-14 md:min-h-[580px] lg:h-[632px] lg:px-20"
+      className="relative flex h-full min-h-[360px] md:min-h-[580px] lg:h-[632px] w-full items-center justify-center px-8 py-12 text-white sm:px-14 lg:px-20"
       style={{ backgroundColor: cardColor }}
     >
       {/* The divider sits on whichever edge of the CARD touches the image */}
       <VerticalCurlyDivider color={cardColor} side={cardSide === "left" ? "right" : "left"} />
-      <div className="flex max-w-[440px] flex-col items-center text-center md:items-start md:text-left">
-        <div className="flex flex-col items-center md:items-start">
-          <p className="font-script text-2xl font-medium text-white/95 sm:text-3xl">Expert Guide</p>
-          <WaveSquiggle className="mt-1 text-white/80" />
+
+      <div className="flex max-w-[493px] flex-col items-center text-center md:items-start md:text-left z-10">
+        {/* Italian / Guthen Bloots font header */}
+        <div className="relative inline-block mb-3">
+          <p
+            className="font-guthen text-[20px] sm:text-[24px] text-white capitalize leading-none"
+            style={{
+              fontFamily: "'Guthen Bloots Personal Use', 'Caveat', 'Kaushan Script', cursive",
+              fontWeight: 400,
+              fontSize: "24px",
+              lineHeight: "100%",
+              letterSpacing: "0.1em",
+              textTransform: "capitalize",
+            }}
+          >
+            Expert Guide
+          </p>
+          <svg
+            className="absolute w-full h-2 -bottom-1.5 left-0 text-white/75"
+            viewBox="0 0 100 10"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,5 Q10,10 20,5 T40,5 T60,5 T80,5 T100,5"
+              stroke="currentColor"
+              fill="none"
+              strokeWidth="1.2"
+            />
+          </svg>
         </div>
 
-        <h3 className="mt-4 text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-[34px]">
+        <h3
+          className="font-gotham text-[22px] sm:text-[24px] text-white tracking-normal mt-2"
+          style={{
+            fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+            fontWeight: 500,
+            fontSize: "24px",
+            lineHeight: "100%",
+            letterSpacing: "0%",
+          }}
+        >
           Curly Girl Method Guide
         </h3>
 
-        <p className="mt-3 text-xs leading-relaxed text-white/85 sm:text-sm lg:text-[15px]">
-          Complete guide to the CGM with moodboards, tips, and step-by-step instructions designed
-          specifically for Arab hair.
+        <p
+          className="font-gotham text-[15px] sm:text-[16px] text-white max-w-[493px] mt-4"
+          style={{
+            fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+            fontWeight: 350,
+            fontSize: "16px",
+            lineHeight: "24px",
+            letterSpacing: "0%",
+          }}
+        >
+          Complete guide to the CGM with moodboards, tips, and step-by-step instructions designed specifically for Arab hair.
         </p>
 
         <button className="group mt-6 inline-flex cursor-pointer items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition-colors hover:text-white/90 sm:text-[13px]">
           <span>EXPLORE NOW</span>
-          <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+          <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5" />
         </button>
       </div>
     </div>
   );
 
   return (
-    <div className="grid min-h-[440px] grid-cols-1 sm:min-h-[520px] md:grid-cols-2 md:min-h-[580px] lg:h-[632px]">
+    <div className="grid min-h-[440px] grid-cols-1 md:grid-cols-2 md:h-[632px] w-full">
       {cardSide === "left" ? (
         <>
-          <div className="order-2 md:order-1">{cardBlock}</div>
-          <div className="order-1 md:order-2">{imageBlock}</div>
+          <div className="order-2 md:order-1 h-full w-full">{cardBlock}</div>
+          <div className="order-1 md:order-2 h-full w-full">{imageBlock}</div>
         </>
       ) : (
         <>
-          {imageBlock}
-          {cardBlock}
+          <div className="h-full w-full">{imageBlock}</div>
+          <div className="h-full w-full">{cardBlock}</div>
         </>
       )}
     </div>
@@ -149,30 +196,80 @@ function JourneyRow({ image, imageColor, cardColor, cardSide }: JourneyRowProps)
 }
 
 const rows: JourneyRowProps[] = [
-  { image: modelWavy, imageColor: "#00C2DE", cardColor: "#5464BC", cardSide: "right" },
-  { image: modelCurly, imageColor: "#F6C1C7", cardColor: "#75468A", cardSide: "left" },
-  { image: modelCoily, imageColor: "#F79F1A", cardColor: "#009CB5", cardSide: "right" },
+  { image: curlyimage1, imageColor: "#00C2DE", cardColor: "#5365BB", cardSide: "right" },
+  { image: curlyimage2, imageColor: "#F6C1C7", cardColor: "#76468A", cardSide: "left" },
+  { image: curlyimage3, imageColor: "#F79F1A", cardColor: "#009ABA", cardSide: "right" },
 ];
 
 export function CurlyJourney() {
   return (
     <section className="relative overflow-hidden bg-white pb-0 pt-14 sm:pt-18 md:pt-20">
-      <div className="mx-auto max-w-4xl px-6 pb-10 text-center sm:pb-14">
-        <div className="inline-flex flex-col items-center justify-center">
-          <span className="font-script text-2xl font-semibold tracking-wide text-gray-800 sm:text-3xl">
+      <div className="mx-auto max-w-[722px] px-6 pb-10 text-center sm:pb-14 flex flex-col items-center">
+        {/* Tag: Learn & Grow */}
+        <div className="relative inline-block mb-3">
+          <p
+            className="font-guthen text-[20px] sm:text-[24px] text-black capitalize leading-none"
+            style={{
+              fontFamily: "'Guthen Bloots Personal Use', 'Caveat', 'Kaushan Script', cursive",
+              fontWeight: 400,
+              fontSize: "24px",
+              lineHeight: "100%",
+              letterSpacing: "0.1em",
+              textTransform: "capitalize",
+            }}
+          >
             Learn &amp; Grow
-          </span>
-          <WaveSquiggle className="mt-1 text-gray-700" />
+          </p>
+          <svg
+            className="absolute w-full h-2 -bottom-1.5 left-0 text-gray-400/80"
+            viewBox="0 0 100 10"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0,5 Q10,10 20,5 T40,5 T60,5 T80,5 T100,5"
+              stroke="currentColor"
+              fill="none"
+              strokeWidth="1.2"
+            />
+          </svg>
         </div>
 
-        <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+        {/* Main Heading: Your Curly Hair Journey Starts Here */}
+        <h2
+          className="font-gotham text-[30px] sm:text-[42px] md:text-[50px] lg:text-[54px] font-bold text-black max-w-[650px] mx-auto tracking-normal mt-2 leading-[1.05]"
+          style={{
+            fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+            fontWeight: 700,
+            letterSpacing: "0%",
+            textAlign: "center",
+          }}
+        >
           Your Curly Hair <br />
-          <span className="text-[#00C5FF]">Journey Starts Here</span>
+          <span
+            className="font-gotham text-[#00CBF8] inline-block"
+            style={{
+              fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+              fontWeight: 700,
+              letterSpacing: "0%",
+              textAlign: "center",
+            }}
+          >
+            Journey Starts Here
+          </span>
         </h2>
 
-        <p className="font-script italic mx-auto mt-3 max-w-xl text-base text-gray-500 sm:text-lg md:text-xl">
-          Access expert guides, styling tips, and a community of women who celebrate their natural
-          curls.
+        {/* Description: Access expert guides... */}
+        <p
+          className="font-kaushan text-[16px] sm:text-[20px] md:text-[24px] text-[#2D3748] max-w-[722px] mx-auto mt-3 sm:mt-4 leading-relaxed sm:leading-normal"
+          style={{
+            fontFamily: "'Kaushan Script', cursive",
+            fontWeight: 400,
+            letterSpacing: "0%",
+            textAlign: "center",
+          }}
+        >
+          Access expert guides, styling tips, and a community of women who celebrate their natural curls.
         </p>
       </div>
 
@@ -182,24 +279,38 @@ export function CurlyJourney() {
         ))}
       </div>
 
-      <div className="relative bg-[#081120] px-6 pb-14 pt-12 text-white sm:px-12 sm:pb-20 sm:pt-16 lg:px-20">
+      <div className="relative bg-[#081120] px-6 pb-14 pt-16 text-white sm:px-12 sm:pb-20 sm:pt-20 lg:px-20">
         <div className="pointer-events-none absolute -top-5 left-0 right-0 z-20 w-full overflow-hidden leading-[0] sm:-top-8">
           <svg viewBox="0 0 1440 60" className="h-6 w-full sm:h-9 md:h-12" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,25 C320,55 560,5 820,35 C1080,65 1300,12 1440,25 L1440,60 L0,60 Z" fill="#081120" />
           </svg>
         </div>
 
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-10 lg:flex-row lg:gap-14">
-          <div className="flex max-w-xl flex-col items-center text-center lg:items-start lg:text-left">
-            <h3 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl md:text-4xl">
+        <div className="relative mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-10 lg:flex-row lg:gap-14">
+          <div className="flex max-w-[792px] flex-col items-center text-center lg:items-start lg:text-left">
+            <h3
+              className="font-gotham text-[28px] sm:text-[38px] md:text-[46px] lg:text-[52px] font-bold text-white tracking-normal leading-[1.05]"
+              style={{
+                fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+                fontWeight: 700,
+                letterSpacing: "0%",
+              }}
+            >
               Join the Curly Hair Revolution
             </h3>
-            <p className="font-script italic mt-3 max-w-md text-base text-white/80 sm:text-lg">
-              Transform your curly hair journey with expert guidance, premium products, and a
-              supportive community.
+
+            <p
+              className="font-kaushan text-[16px] sm:text-[20px] md:text-[24px] text-white/90 max-w-[649px] mt-4 leading-relaxed sm:leading-normal"
+              style={{
+                fontFamily: "'Kaushan Script', cursive",
+                fontWeight: 400,
+                letterSpacing: "0%",
+              }}
+            >
+              Transform your curly hair journey with expert guidance, premium products, and a supportive community.
             </p>
 
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-3.5 lg:justify-start">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5 lg:justify-start">
               <button className="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-[#00C5FF] px-6 py-3 text-xs font-bold text-[#081120] shadow-lg shadow-[#00C5FF]/20 transition-all hover:bg-[#00B4EA] sm:text-sm">
                 <span>Explore Products</span>
                 <ArrowRight size={15} />
@@ -218,8 +329,25 @@ export function CurlyJourney() {
               ["0", "Sulfates"],
             ].map(([stat, label]) => (
               <div key={label}>
-                <div className="text-3xl font-extrabold text-[#00C5FF] sm:text-4xl">{stat}</div>
-                <div className="mt-1 text-xs font-medium uppercase tracking-wider text-white/60">{label}</div>
+                <div
+                  className="font-gotham text-[24px] sm:text-[28px] md:text-[30px] font-medium text-[#00C5FF]"
+                  style={{
+                    fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+                    fontWeight: 500,
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                  }}
+                >
+                  {stat}
+                </div>
+                <div
+                  className="font-gotham mt-1.5 text-xs font-medium uppercase tracking-wider text-white/70"
+                  style={{
+                    fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
+                  }}
+                >
+                  {label}
+                </div>
               </div>
             ))}
           </div>

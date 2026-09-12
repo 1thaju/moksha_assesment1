@@ -66,14 +66,16 @@ export function Ingredients() {
           
           {/* Main Title: Powered by Nature's Best Ingredients */}
           <h2
-            className="font-gotham font-bold text-[32px] sm:text-[44px] md:text-[54px] text-black leading-[1.05] sm:leading-[1.1] text-center tracking-normal max-w-[568px]"
+            className="font-gotham font-bold text-[32px] sm:text-[44px] md:text-[54px] text-black leading-[1.05] sm:leading-[1.1] text-center tracking-normal w-full max-w-[900px] mx-auto"
             style={{
               fontFamily: "'Gotham', 'Montserrat', 'Poppins', sans-serif",
               fontWeight: 700,
             }}
           >
-            Powered by <span className="text-[#00cbf8]">Nature's</span><br />
-            Best Ingredients
+            Powered by
+            <span className="block text-[#00cbf8] whitespace-nowrap mt-1 sm:mt-2">
+              Nature's Best Ingredients
+            </span>
           </h2>
           
           {/* Subtitle: Kaushan Script 24px */}

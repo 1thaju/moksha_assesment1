@@ -2,14 +2,15 @@ import modelSvg from "../assets/model.svg";
 import feedbackSvg from "../assets/feedback 1.svg";
 import crossSvg from "../assets/cross.svg";
 import arrowSvg from "../assets/arrow.svg";
-import video1 from "../assets/video1.mp4";
-import video2 from "../assets/video2.mp4";
-import video3 from "../assets/video3.mp4";
+import community1 from "../assets/community1.mp4";
+import community2 from "../assets/community2.mp4";
+import community3 from "../assets/community3.mp4";
+import community4 from "../assets/community4.mp4";
 
 export function Community() {
   const influencerVideos = [
-    video1, video2, video3, video1,
-    video3, video1, video2, video3
+    community1, community2, community3, community4,
+    community4, community3, community1, community2,
   ];
 
   return (
@@ -69,14 +70,24 @@ export function Community() {
           />
         </svg>
         
-        {/* Decorative Crosses (Top Section) */}
-        <img src={crossSvg} alt="" className="absolute top-[10%] left-[8%] w-10 h-10 rotate-12 opacity-40 z-0 animate-pulse" />
-        <img src={crossSvg} alt="" className="absolute top-[35%] left-[48%] w-6 h-6 -rotate-45 opacity-30 z-0 animate-pulse" style={{ animationDelay: "1s" }} />
-        <img src={crossSvg} alt="" className="absolute bottom-[25%] right-[12%] w-14 h-14 rotate-90 opacity-50 z-0 animate-pulse" style={{ animationDelay: "2s" }} />
-        <img src={crossSvg} alt="" className="absolute top-[20%] right-[22%] w-8 h-8 rotate-180 opacity-20 z-0 animate-pulse" style={{ animationDelay: "1.5s" }} />
-        <img src={crossSvg} alt="" className="absolute bottom-[15%] left-[18%] w-5 h-5 rotate-45 opacity-60 z-0 animate-pulse" style={{ animationDelay: "0.5s" }} />
-        <img src={crossSvg} alt="" className="absolute top-[60%] right-[30%] w-12 h-12 -rotate-12 opacity-30 z-0 animate-pulse" style={{ animationDelay: "0.8s" }} />
-        <img src={crossSvg} alt="" className="absolute top-[5%] right-[45%] w-7 h-7 rotate-180 opacity-40 z-0 animate-pulse" style={{ animationDelay: "1.2s" }} />
+        {/* Decorative Crosses (Top Blue Section) - Mixed sizes including large faint background crosses */}
+        {/* Large faint background crosses */}
+        <img src={crossSvg} alt="" className="absolute -top-[10%] left-[2%] w-[240px] h-[240px] rotate-12 opacity-15 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute top-[30%] right-[-40px] w-[280px] h-[280px] -rotate-45 opacity-10 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute bottom-[5%] left-[25%] w-[200px] h-[200px] rotate-[35deg] opacity-10 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute top-[10%] left-[50%] w-[160px] h-[160px] rotate-[120deg] opacity-[0.08] z-0 pointer-events-none select-none" />
+
+        {/* Medium & Small accent crosses */}
+        <img src={crossSvg} alt="" className="absolute top-[8%] left-[8%] w-12 h-12 rotate-12 opacity-35 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute top-[28%] left-[45%] w-8 h-8 -rotate-45 opacity-25 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute bottom-[20%] right-[10%] w-16 h-16 rotate-45 opacity-30 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute top-[15%] right-[20%] w-10 h-10 -rotate-12 opacity-25 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute bottom-[35%] left-[18%] w-6 h-6 rotate-90 opacity-30 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute top-[55%] right-[32%] w-14 h-14 rotate-[30deg] opacity-20 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute top-[4%] right-[38%] w-9 h-9 -rotate-[25deg] opacity-30 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute bottom-[10%] left-[4%] w-12 h-12 rotate-[15deg] opacity-25 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute top-[75%] left-[38%] w-10 h-10 -rotate-[50deg] opacity-20 z-0 pointer-events-none select-none" />
+        <img src={crossSvg} alt="" className="absolute top-[40%] right-[4%] w-14 h-14 rotate-[110deg] opacity-25 z-0 pointer-events-none select-none" />
 
         {/* Decorative Rotating Text on Right */}
         <div className="absolute right-[-60px] lg:right-[-40px] top-[10px] w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] pointer-events-none opacity-[0.25] select-none z-0">
@@ -186,22 +197,28 @@ export function Community() {
       </div>
 
       {/* Bottom White Section - Influencer Approved */}
-      <div className="relative w-full bg-white pt-20 pb-10">
+      <div className="relative w-full bg-white pt-20 pb-10 overflow-hidden">
         
-        {/* Decorative Crosses (Bottom Section) - Darker/Opaque for white bg */}
-        <img src={crossSvg} alt="" className="absolute top-[5%] left-[25%] w-8 h-8 rotate-45 opacity-10 pointer-events-none z-0" />
-        <img src={crossSvg} alt="" className="absolute top-[40%] right-[8%] w-12 h-12 -rotate-90 opacity-[0.08] pointer-events-none z-0" />
-        <img src={crossSvg} alt="" className="absolute bottom-[30%] left-[10%] w-10 h-10 rotate-12 opacity-15 pointer-events-none z-0" />
-        <img src={crossSvg} alt="" className="absolute top-[70%] right-[40%] w-6 h-6 rotate-180 opacity-[0.05] pointer-events-none z-0" />
-        <img src={crossSvg} alt="" className="absolute bottom-[15%] right-[25%] w-14 h-14 -rotate-45 opacity-10 pointer-events-none z-0" />
+        {/* Decorative Crosses (Bottom White Section) - Large subtle & smaller accents */}
+        <img src={crossSvg} alt="" className="absolute -top-[10%] -left-[5%] w-[320px] h-[320px] rotate-45 brightness-0 opacity-[0.03] pointer-events-none select-none z-0" />
+        <img src={crossSvg} alt="" className="absolute top-[20%] -right-[80px] w-[360px] h-[360px] -rotate-12 brightness-0 opacity-[0.025] pointer-events-none select-none z-0" />
+        <img src={crossSvg} alt="" className="absolute bottom-[5%] left-[15%] w-[220px] h-[220px] rotate-[80deg] brightness-0 opacity-[0.035] pointer-events-none select-none z-0" />
 
-        {/* Decorative Rotating Text on Left */}
-        <div className="absolute left-[-150px] top-[10%] w-[350px] h-[350px] pointer-events-none opacity-[0.05] select-none z-0">
+        <img src={crossSvg} alt="" className="absolute top-[4%] left-[18%] w-10 h-10 rotate-45 brightness-0 opacity-[0.06] pointer-events-none select-none z-0" />
+        <img src={crossSvg} alt="" className="absolute top-[18%] right-[8%] w-16 h-16 -rotate-90 brightness-0 opacity-[0.05] pointer-events-none select-none z-0" />
+        <img src={crossSvg} alt="" className="absolute bottom-[28%] left-[6%] w-14 h-14 rotate-12 brightness-0 opacity-[0.06] pointer-events-none select-none z-0" />
+        <img src={crossSvg} alt="" className="absolute top-[35%] left-[30%] w-8 h-8 rotate-180 brightness-0 opacity-[0.04] pointer-events-none select-none z-0" />
+        <img src={crossSvg} alt="" className="absolute bottom-[12%] right-[18%] w-20 h-20 -rotate-45 brightness-0 opacity-[0.05] pointer-events-none select-none z-0" />
+        <img src={crossSvg} alt="" className="absolute top-[6%] right-[28%] w-7 h-7 rotate-[75deg] brightness-0 opacity-[0.04] pointer-events-none select-none z-0" />
+        <img src={crossSvg} alt="" className="absolute bottom-[40%] right-[4%] w-12 h-12 rotate-[25deg] brightness-0 opacity-[0.05] pointer-events-none select-none z-0" />
+
+        {/* Decorative Rotating Text on Top Left of Community Videos */}
+        <div className="absolute left-2 sm:left-6 lg:left-12 top-[60px] sm:top-[80px] lg:top-[90px] w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] pointer-events-none select-none z-10">
           <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_25s_linear_infinite]">
             <path id="circlePathExpert" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="transparent" />
-            <text fontSize="7" fontWeight="bold" fill="#000000" letterSpacing="2">
+            <text fontSize="7.5" fontWeight="bold" fill="#77DBFC" letterSpacing="2.5">
               <textPath href="#circlePathExpert">
-                Hydra Curls Hydra Curls Hydra Curls
+                • HYDRA CURLS • HYDRA CURLS • HYDRA CURLS 
               </textPath>
             </text>
           </svg>
@@ -240,7 +257,7 @@ export function Community() {
               }}
             >
               See What The <br />
-              <span className="font-gotham font-bold text-[#00cbf8]">Experts Are Saying</span>
+              <span className="font-gotham font-bold text-[#00cbf8] whitespace-nowrap">Experts Are Saying</span>
             </h2>
           </div>
 
