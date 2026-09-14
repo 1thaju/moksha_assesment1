@@ -1,4 +1,3 @@
-import cloudSvg from "../assets/cloud.svg";
 import logoHydracurl from "../assets/logo_hydracurl.svg";
 import hairtype1 from "../assets/hairtype1.svg";
 import hairtype2 from "../assets/hairtype2.svg";

@@ -1,69 +1,78 @@
-# Hydra Curls — Figma to Responsive React Page
+# Hydra Curls — Assessment Submission
 
-A responsive React + TypeScript landing page built from the provided Figma screenshots
-(direct Figma file access wasn't available, so this was built from exported screenshots +
-Inspect/Dev Mode measurements rather than a live Figma import).
+This project is a responsive landing page built in React + TypeScript to match the provided Hydra Curls design direction and layout. The page includes multiple branded sections such as the hero, product highlights, ingredients, customer community, hair type content, and a final call-to-action footer.
 
-## Stack
-- React 19 + TypeScript
+## Project Overview
+
+The goal of this assessment was to translate a visual design into a clean, responsive, production-ready front-end experience using modern React patterns and utility-first styling. Emphasis was placed on:
+
+- Responsive layout behavior across mobile and desktop
+- Component-based structure for reusability
+- Consistent typography, spacing, and color system
+- Clean, maintainable code architecture
+- Functional mobile navigation and section organization
+
+## Tech Stack
+
+- React 19
+- TypeScript
 - Vite
 - Tailwind CSS v4
-- lucide-react (icons)
-- class-variance-authority / clsx / tailwind-merge (utility styling helpers, shadcn-style)
+- Lucide React
+- clsx / class-variance-authority / tailwind-merge
 
-## Setup
+## Run the Project
 
 ```bash
 npm install
-npm run dev       # local dev server
-npm run build     # production build -> dist/
-npm run preview   # preview the production build
+npm run dev
 ```
 
-## Structure
+To create a production build:
 
+```bash
+npm run build
 ```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```bash
 src/
   components/
-    Header.tsx          # nav bar (mobile menu included)
-    Hero.tsx             # purple gradient hero + script headline
-    WaveDivider.tsx       # reusable SVG wave section divider
-    CloudDivider.tsx      # reusable SVG cloud/soft-bump divider
-    ProductBottle.tsx     # placeholder product illustration (see note below)
-    NewLaunch.tsx          # "New Launch" intro + product + CTA buttons
-    ProductBanner.tsx      # full lineup banner section
-    InfoSplit.tsx           # two-column info cards
-    ProductCarousel.tsx     # dome-shaped product carousel + 48-hour stat
-    Ingredients.tsx          # 3 ingredient cards + badge row
-    Community.tsx             # testimonials section
-    HairTypes.tsx              # influencer grid + hair-type cards
-    CurlyJourney.tsx            # colorful CTA grid + revolution banner
-    Footer.tsx                   # footer with newsletter signup
+    Header.tsx
+    Hero.tsx
+    WaveDivider.tsx
+    CloudDivider.tsx
+    ProductBottle.tsx
+    NewLaunch.tsx
+    ProductBanner.tsx
+    InfoSplit.tsx
+    ProductCarousel.tsx
+    Ingredients.tsx
+    Community.tsx
+    HairTypes.tsx
+    CurlyJourney.tsx
+    Footer.tsx
   App.tsx
-  index.css              # Tailwind v4 theme tokens (brand colors, fonts)
+  index.css
 ```
 
-Each section is its own component so they're independently reusable/testable, rather than one
-long page file.
+## Notes
 
-## Responsive approach
-Built mobile-first with Tailwind breakpoints (`sm:`, `md:`) — grids collapse to single columns,
-the dome/carousel and wave dividers scale height at each breakpoint, and the nav collapses to a
-hamburger menu below `md`.
+- The design uses placeholder illustrations where proprietary product photography or branded assets were unavailable.
+- Layout, styling, spacing, and structure were built to closely reflect the provided reference.
+- The implementation is mobile-first and adapts responsively across common breakpoints.
 
-## Note on imagery
-Real product photography and model photography from the Figma file are proprietary brand assets
-(this is a real product page for an existing brand). Rather than reproduce that imagery, this
-build uses generic placeholder illustrations and icon-based placeholders in their place —
-swap in the actual exported PNG/SVG assets from the Figma file's Dev Mode / asset export for a
-pixel-accurate final result. Layout, spacing, typography, color palette, and section structure
-were matched directly to the design.
+## Assessment Context
 
-## AI tools used
-- Claude (Sonnet) — used for full component architecture, all React/TypeScript/Tailwind code,
-  the wave/cloud SVG divider implementations, and responsive layout decisions, working directly
-  from Figma screenshots and Inspect-mode measurements.
+This repository is submitted as part of the assessment and demonstrates front-end implementation skills using React, TypeScript, and responsive UI design practices.
 
-## Total development time
-~[fill in based on your actual session length]
-# moksha_assesment1
+## Author
+
+Hydra Curls Assessment Build

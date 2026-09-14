@@ -14,7 +14,7 @@ export function Community() {
   ];
 
   return (
-    <section className="w-full flex flex-col bg-white overflow-hidden">
+    <section className="relative z-20 isolate w-full flex flex-col bg-white overflow-hidden shadow-[0_-20px_40px_rgba(0,0,0,0.06)]">
       
       {/* Top Section with Dynamic #77DBFC Wave Background */}
       <div className="relative w-full overflow-hidden z-10 pt-16 sm:pt-20 lg:pt-24 pb-0">

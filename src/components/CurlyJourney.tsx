@@ -3,25 +3,6 @@ import curlyimage1 from "../assets/curlyimage1.svg";
 import curlyimage2 from "../assets/curlyimage2.svg";
 import curlyimage3 from "../assets/curlyimage3.svg";
 
-function WaveSquiggle({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      className={`h-2.5 w-14 ${className}`}
-      viewBox="0 0 70 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M2 6 C 7 1, 13 1, 18 6 C 23 11, 29 11, 35 6 C 41 1, 47 1, 52 6 C 57 11, 63 11, 68 6"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
 /**
  * A single wavy vertical divider that sits on one edge of the color card,
  * biting slightly into the adjacent image. `side` is which edge of the CARD

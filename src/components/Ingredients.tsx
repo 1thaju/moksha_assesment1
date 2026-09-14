@@ -40,7 +40,8 @@ const ingredients = [
 
 export function Ingredients() {
   return (
-    <section className="relative bg-[#f4f9fa] pt-12 md:pt-16 pb-16 md:pb-24 min-h-screen flex flex-col justify-center overflow-hidden z-10">
+    <div className="relative z-10 w-full min-h-[140vh] sm:min-h-[150vh] md:min-h-[160vh] motion-reduce:min-h-0">
+      <section className="sticky top-0 z-10 w-full min-h-screen bg-[#f4f9fa] pt-12 md:pt-16 pb-16 md:pb-24 flex flex-col justify-center overflow-hidden motion-reduce:static motion-reduce:min-h-0">
       
       <div className="relative z-10 mx-auto max-w-[1680px] px-6 sm:px-10 md:px-16 lg:px-[120px] w-full">
         
@@ -198,5 +199,6 @@ export function Ingredients() {
 
       </div>
     </section>
+    </div>
   );
 }

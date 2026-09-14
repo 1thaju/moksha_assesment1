@@ -6,14 +6,14 @@ import { InfoSplit } from "./components/InfoSplit";
 import { ProductCarousel } from "./components/ProductCarousel";
 import { PromiseSection } from "./components/PromiseSection";
 import { Ingredients } from "./components/Ingredients";
-import { CommunitySection } from "./components/CommunitySection";
+import { Community } from "./components/Community";
 import { HairTypesSection } from "./components/HairTypesSection";
 import { CurlyJourney } from "./components/CurlyJourney";
 import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <div className="overflow-x-clip">
+    <div className="w-full relative">
       <Header />
       <Hero />
       <NewLaunch />
@@ -22,7 +22,8 @@ function App() {
       <ProductCarousel />
       <PromiseSection />
       <Ingredients />
-      <CommunitySection />
+      <Community />
+
       <HairTypesSection />
       <CurlyJourney />
       <Footer />
