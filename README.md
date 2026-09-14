@@ -75,4 +75,5 @@ This repository is submitted as part of the assessment and demonstrates front-en
 
 ## Author
 
-Hydra Curls Assessment Build
+Thajul Niyas
+
